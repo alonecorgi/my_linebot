@@ -33,8 +33,13 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
+    if event.message.text == "情緒":
+        reply_text = "穩定"
+    else:
+        reply_text = "你好!請輸入"情緒"來獲得回覆!"
+    message = TextSendMessage(text=reply_text)
     line_bot_api.reply_message(event.reply_token, message)
+
 
 import os
 if __name__ == "__main__":
