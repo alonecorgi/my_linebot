@@ -36,7 +36,7 @@ def handle_message(event):
     if event.message.text == "情緒":
         reply_text = "穩定"
     else:
-        reply_text = "你好!請輸入"情緒"來獲得回覆!"
+        reply_text = "你好!請輸入'情緒'來獲得回覆!"
     message = TextSendMessage(text=reply_text)
     line_bot_api.reply_message(event.reply_token, message)
 
